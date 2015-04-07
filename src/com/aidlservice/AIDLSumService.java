@@ -22,6 +22,7 @@ public class AIDLSumService extends Service {
 
 	@Override
 	public void onCreate() {
+		Log.i(TAG  , "onCreate()");
 		super.onCreate();
 	}
 	
@@ -33,11 +34,13 @@ public class AIDLSumService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		super.onStartCommand(intent, flags, startId);
+		Log.i(TAG  , "onStartCommand()");
 		return Service.BIND_AUTO_CREATE;
 	}
 	
 	@Override
 	public IBinder onBind(Intent arg0) {
+		Log.i(TAG  , "onBind()");
 		return new SumServiceImpl();
 	}
 
